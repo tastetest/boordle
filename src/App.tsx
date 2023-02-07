@@ -1,15 +1,11 @@
 import React from 'react';
+import container from "./components/boordle";
 
 function App() {
   return (
     <div className="App">
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+      <container>
+      </container>
     </div>
   );
 }
