@@ -1,11 +1,10 @@
 import React from 'react';
-import container from "./components/boordle";
+import Boordle from './components/Boordle';
 
 function App() {
   return (
     <div className="App">
-      <container>
-      </container>
+      <Boordle />
     </div>
   );
 }
