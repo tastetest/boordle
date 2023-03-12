@@ -1,16 +1,15 @@
 import React from 'react';
-import randomWords from 'random-words';
+import { words } from './words'
 import { useEffect, useState } from 'react';
 
 const RandomWordGen = () => {
 
-	let word = require('random-words');
+	let item = words[Math.floor(Math.random() * words.length)];
+	// then split specified item into characters
+	// item.splice('0, 4') -- we want to make sure the word is only a 5 letter word
 
 	return (
 		<>
-			<div>
-				{word({ exactly: 1, minLength: 5, maxLength: 6 })}
-			</div>
 			<ul>
 				<li>
 				</li>

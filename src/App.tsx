@@ -1,10 +1,10 @@
 import React from 'react';
-import Boordle from './components/Boordle';
+import RandomWordGen from './components/RandomWordGen';
 
 function App() {
   return (
     <div className="App">
-      <Boordle />
+      <RandomWordGen />
     </div>
   );
 }
