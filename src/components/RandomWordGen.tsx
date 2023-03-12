@@ -1,5 +1,5 @@
 import React from 'react';
-import { words } from './words'
+import words from '../words'
 import { useEffect, useState } from 'react';
 
 const RandomWordGen = () => {
@@ -7,6 +7,7 @@ const RandomWordGen = () => {
 	let item = words[Math.floor(Math.random() * words.length)];
 	// then split specified item into characters
 	// item.splice('0, 4') -- we want to make sure the word is only a 5 letter word
+	console.log(item);
 
 	return (
 		<>
