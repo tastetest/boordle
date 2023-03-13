@@ -3,11 +3,11 @@
 This is an app I'm making that aims to be a bootleg of wordle, as a challenge for myself. This app is made in react and typescript.
 
 ## TODO:
-[x] get word generation to generate a 5 letter word randomly 
-[ ] use string comparison methods to validate if a person has typed the right word or not
-[ ] make unordered lists to contain each letter, add validation for each element within that list 
-[ ] 
-[ ] 
+1. [x] get word generation to generate a 5 letter word randomly 
+2. [ ] use string comparison methods to validate if a person has typed the right word or not
+3. [ ] make unordered lists to contain each letter, add validation for each element within that list 
+4. [ ] 
+5. [ ] 
 
 ### random Thoughts:
 - what about generating the word, and then slicing each letter separately to put in a "private" list, 
