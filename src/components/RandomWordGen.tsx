@@ -31,6 +31,7 @@ const RandomWordGen = () => {
 				enterButton="Search"
 				size="large"
 				onSearch={onSearch}
+				style={{ width: '30%'}}
 			/>
 
 		</>
