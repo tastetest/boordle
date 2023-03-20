@@ -1,4 +1,4 @@
-import words from './src/words';
+import words from './words';
 
 interface GameState {
 	word: string,
@@ -40,7 +40,7 @@ function makeGuess(guess: string, gameState: GameState): GameState {
 
 function initializeGameState(): GameState {
 	const word = generateRandomWord();
-	const guesses = [];
+	const guesses:any = [];
 	const attemptsLeft = 6;
 	return {
 		word,

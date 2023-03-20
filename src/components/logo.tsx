@@ -6,7 +6,6 @@ const Logo = () => {
 	// do some magic here
 	return (
 		<div>
-
 		      <img className="logo" src={Picture} alt="Boordle Logo" />
 		</div>
 	)

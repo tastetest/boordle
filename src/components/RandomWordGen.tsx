@@ -1,7 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import words from '../words';
+import words from './words';
 import { Input, Space } from 'antd';
+//	import {checkGuess } from '../'
 
 const RandomWordGen = () => {
 
