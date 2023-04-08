@@ -7,8 +7,9 @@ import { Input, Space } from 'antd';
 const RandomWordGen = () => {
 
 	const { Search } = Input;
-	const onSearch = (value: string) => console.log(value);
 	let item = words[Math.floor(Math.random() * words.length)];
+	const onSearch = (value: string) => {if (value === item) {console.log("this is the value: ", value)}};
+
 
 	// then put item into an array && split specified item into characters
 	let array = Array.from(item);
