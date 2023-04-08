@@ -8,15 +8,29 @@ const RandomWordGen = () => {
 
 	const { Search } = Input;
 	let item = words[Math.floor(Math.random() * words.length)];
-	const onSearch = (value: string) => {if (value === item) {console.log("this is the value: ", value)}};
+	// this is to compare the string fetched from the array with 
+	// the input from the user.
+	let givenArray = Array.from(item);
+
+	const onSearch = (value: string) => {
+
+		// this splits the search value into an array with
+		// individual characters in each index
+		let userInput = Array.from(value); 
+
+		if (userInput === givenArray) {
+			console.log("this is the value: ", value)}
+		else { 
+			console.log("the values dont match")
+		};
+	};
 
 
 	// then put item into an array && split specified item into characters
-	let array = Array.from(item);
 
-	const listItems = array.map((i, k) => <li key={k}>{i}</li>);
+	const listItems = givenArray.map((i, k) => <li key={k}>{i}</li>);
 
-	console.log(array);
+	console.log(givenArray);
 
 	return (
 		<>
