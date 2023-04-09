@@ -10,7 +10,7 @@ const RandomWordGen = () => {
 	let item = words[Math.floor(Math.random() * words.length)];
 	// this is to compare the string fetched from the array with 
 	// the input from the user.
-	let givenArray = Array.from(item);
+	const givenArray = Array.from(item);
 
 	const onSearch = (value: string) => {
 
@@ -18,11 +18,18 @@ const RandomWordGen = () => {
 		// individual characters in each index
 		let userInput = Array.from(value); 
 
-		if (userInput === givenArray) {
-			console.log("this is the value: ", value)}
-		else { 
-			console.log("the values dont match")
-		};
+		let len = Math.max(givenArray.length, userInput.length);
+		// this is to compare between each element in both arrays and 
+		// return whether they are true or false.
+
+		for (let i = 0; i < len; i++) {
+			console.log(givenArray[i], userInput[i], givenArray[i] === userInput[i])
+			if (givenArray[i] === userInput[i]) {
+				console.log("you guessed the right word");
+			} else {
+				console.log("you guessed the wrong word");
+			}
+		}
 	};
 
 
@@ -30,7 +37,6 @@ const RandomWordGen = () => {
 
 	const listItems = givenArray.map((i, k) => <li key={k}>{i}</li>);
 
-	console.log(givenArray);
 
 	return (
 		<>

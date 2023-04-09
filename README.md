@@ -4,9 +4,9 @@ This is an app I'm making that aims to be a bootleg of wordle, as a challenge fo
 
 ## TODO:
 1. [x] get word generation to generate a 5 letter word randomly 
-2. [ ] use string comparison methods to validate if a person has typed the right word or not
-3. [ ] make unordered lists to contain each letter, add validation for each element within that list 
-4. [ ] 
+2. [x] use string comparison methods to validate if a person has typed the right word or not
+3. [x] make unordered lists to contain each letter, add validation for each element within that list 
+4. [ ] indicate what letters are correct and wrong, or misplaced
 5. [ ] 
 
 ### random Thoughts:
