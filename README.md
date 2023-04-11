@@ -6,11 +6,8 @@ This is an app I'm making that aims to be a bootleg of wordle, as a challenge fo
 1. [x] get word generation to generate a 5 letter word randomly 
 2. [x] use string comparison methods to validate if a person has typed the right word or not
 3. [x] make unordered lists to contain each letter, add validation for each element within that list 
-<<<<<<< HEAD
 4. [ ] indicate what letters are correct and wrong, or misplaced
-=======
 4. [ ] 
->>>>>>> 567eeb2 (updated readme)
 5. [ ] 
 
 ### random Thoughts:
