@@ -21,3 +21,10 @@ and to prevent bikeshedding. Then after Boordle is completed, then I can focus o
 
 - I want to take a random word, that has to be exactly 5 characters long, and then split (slice it, so we can have a copy of the original word before it gets split) it into individual characters with split(). 
 Then i'll take those split characters and put them all into corresponding list elements(maybe with a forEach loop). Then when someone inputs their word, it will do a compare with the initial word that was fetched.
+
+- So i think i will use indexOf to check for ANY valid instances of a certain letter within an array, and then return true if that is the case.
+``` 
+LetterIsInTheRightPlace would return true.
+LetterIsInTheWordButNotTheRightPlace would return true.
+LetterIsNotInTheWord would return false. 
+```

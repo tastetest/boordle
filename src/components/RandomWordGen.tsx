@@ -2,7 +2,6 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import words from './words';
 import { Input, Space } from 'antd';
-//	import {checkGuess } from '../'
 
 const RandomWordGen = () => {
 
@@ -26,17 +25,14 @@ const RandomWordGen = () => {
 			console.log(givenArray[i], userInput[i], givenArray[i] === userInput[i])
 			if (givenArray[i] === userInput[i]) {
 				console.log("you guessed the correct word");
-				return true;
 			}
-			else {
+			else if (givenArray[i] !== userInput[i]) {
 				console.log("you suck lol");
-				return false;
 			}
 		}
 	}
 
 	const onSearch = (value: string) => {
-
 		checkGuess(value);
 	};
 
