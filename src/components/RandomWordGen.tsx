@@ -12,24 +12,32 @@ const RandomWordGen = () => {
 	// the input from the user.
 	const givenArray = Array.from(item);
 
-	const onSearch = (value: string) => {
-
+	const checkGuess = (value: string) => {
 		// this splits the search value into an array with
 		// individual characters in each index
-		let userInput = Array.from(value); 
+		let userInput = Array.from(value);
 
 		let len = Math.max(givenArray.length, userInput.length);
+
 		// this is to compare between each element in both arrays and 
 		// return whether they are true or false.
 
 		for (let i = 0; i < len; i++) {
 			console.log(givenArray[i], userInput[i], givenArray[i] === userInput[i])
 			if (givenArray[i] === userInput[i]) {
-				console.log("you guessed the right word");
-			} else {
-				console.log("you guessed the wrong word");
+				console.log("you guessed the correct word");
+				return true;
+			}
+			else {
+				console.log("you suck lol");
+				return false;
 			}
 		}
+	}
+
+	const onSearch = (value: string) => {
+
+		checkGuess(value);
 	};
 
 
