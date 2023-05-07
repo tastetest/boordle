@@ -9,6 +9,9 @@ interface GameState {
 }
 const RandomWordGen = () => {
 
+	let guess = 5;
+	const [guessesLeft, setGuessesLeft] = useState(guess);
+
 	const { Search } = Input;
 	let item = words[Math.floor(Math.random() * words.length)];
 	// this is to compare the string fetched from the array with 
@@ -17,7 +20,6 @@ const RandomWordGen = () => {
 
 	const makeGuess = (value: string, attemptsLeft: GameState) => {
 		// to do here
-		const [guessesLeft, setGuessesLeft] = useState();
 	}
 	const checkGuess = (value: string) => {
 		// this splits the search value into an array with
@@ -50,6 +52,9 @@ const RandomWordGen = () => {
 	}
 
 	const onSearch = (value: string) => {
+		setGuessesLeft(guess -= 1);
+		console.log("you have this many guesses left:", guessesLeft);
+
 		checkGuess(value);
 		const userInput = Array.from(value);
 		
@@ -61,6 +66,7 @@ const RandomWordGen = () => {
 				</div>
 			</>
 		)
+
 	};
 
 
