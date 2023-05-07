@@ -22,25 +22,43 @@ const RandomWordGen = () => {
 		// return whether they are true or false.
 
 		for (let i = 0; i < len; i++) {
+			// indexOf will search for that specific element in the given array.
 			console.log(givenArray[i], userInput[i], givenArray[i] === userInput[i])
-			if (givenArray[i] === userInput[i]) {
-				console.log("you guessed the correct word");
+
+			let letterPosition = givenArray.indexOf(userInput[i]);
+
+			if (letterPosition === -1) {
+				console.log("gray square");
+			} else {
+				if (givenArray[i] === userInput[i]) {
+					console.log("green square");
+				} else {
+					console.log("yellow square");
+				}
+
 			}
-			else if (givenArray[i] !== userInput[i]) {
-				console.log("you suck lol");
-			}
+				
 		}
 	}
 
 	const onSearch = (value: string) => {
 		checkGuess(value);
+		const userInput = Array.from(value);
+		
+		const listUserInput = userInput.map((i, k) => <li key={k}>{i}</li>);
+		return (
+			<>
+				<div>
+					{listUserInput}
+				</div>
+			</>
+		)
 	};
 
 
 	// then put item into an array && split specified item into characters
 
 	const listItems = givenArray.map((i, k) => <li key={k}>{i}</li>);
-
 
 	return (
 		<>

@@ -7,8 +7,8 @@ This is an app I'm making that aims to be a bootleg of wordle, as a challenge fo
 2. [x] use string comparison methods to validate if a person has typed the right word or not
 3. [x] make unordered lists to contain each letter, add validation for each element within that list 
 4. [ ] indicate what letters are correct and wrong, or misplaced
-4. [ ] 
 5. [ ] 
+6. [ ] 
 
 ### random Thoughts:
 - what about generating the word, and then slicing each letter separately to put in a "private" list, 
