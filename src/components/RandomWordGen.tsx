@@ -3,6 +3,10 @@ import { useEffect, useState } from 'react';
 import words from './words';
 import { Input, Space } from 'antd';
 
+interface GameState {
+	guesses: [];
+	attemptsLeft: any;
+}
 const RandomWordGen = () => {
 
 	const { Search } = Input;
@@ -11,6 +15,10 @@ const RandomWordGen = () => {
 	// the input from the user.
 	const givenArray = Array.from(item);
 
+	const makeGuess = (value: string, attemptsLeft: GameState) => {
+		// to do here
+		const [guessesLeft, setGuessesLeft] = useState();
+	}
 	const checkGuess = (value: string) => {
 		// this splits the search value into an array with
 		// individual characters in each index
