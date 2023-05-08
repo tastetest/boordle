@@ -7,10 +7,9 @@ interface GameState {
 	guesses: [];
 	attemptsLeft: any;
 }
-const RandomWordGen = () => {
 
-	let guess = 5;
-	const [guessesLeft, setGuessesLeft] = useState(guess);
+const RandomWordGen = () => {
+	const [guessesLeft, setGuessesLeft] = useState(5);
 
 	const { Search } = Input;
 	let item = words[Math.floor(Math.random() * words.length)];
@@ -18,9 +17,6 @@ const RandomWordGen = () => {
 	// the input from the user.
 	const givenArray = Array.from(item);
 
-	const makeGuess = (value: string, attemptsLeft: GameState) => {
-		// to do here
-	}
 	const checkGuess = (value: string) => {
 		// this splits the search value into an array with
 		// individual characters in each index
@@ -51,22 +47,15 @@ const RandomWordGen = () => {
 		}
 	}
 
-	const onSearch = (value: string) => {
-		setGuessesLeft(guess -= 1);
+	const OnSearch = (value: string) => {
 		console.log("you have this many guesses left:", guessesLeft);
 
 		checkGuess(value);
 		const userInput = Array.from(value);
 		
-		const listUserInput = userInput.map((i, k) => <li key={k}>{i}</li>);
-		return (
-			<>
-				<div>
-					{listUserInput}
-				</div>
-			</>
-		)
+		const listUserInput = userInput.map((i, k) => <li key={k}>{i}</li>); // TODO!
 
+		setGuessesLeft(guessesLeft - 1)
 	};
 
 
@@ -84,7 +73,7 @@ const RandomWordGen = () => {
 				allowClear
 				enterButton="Search"
 				size="large"
-				onSearch={onSearch}
+				onSearch={OnSearch}
 				style={{ width: '30%'}}
 			/>
 
