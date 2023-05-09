@@ -54,6 +54,7 @@ const RandomWordGen = () => {
 		
 		const listUserInput = userInput.map((i, k) => <li key={k}>{i}</li>); // TODO!
 
+		checkGuess(value);
 		setGuessesLeft(guessesLeft - 1)
 	};
 
