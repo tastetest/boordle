@@ -1,12 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import words from './words';
+import EndingPage from './EndingPage';
 import { Input, Space } from 'antd';
-
-interface GameState {
-	guesses: [];
-	attemptsLeft: any;
-}
 
 const RandomWordGen = () => {
 	const [guessesLeft, setGuessesLeft] = useState(5);
@@ -16,6 +12,10 @@ const RandomWordGen = () => {
 	// this is to compare the string fetched from the array with 
 	// the input from the user.
 	const givenArray = Array.from(item);
+
+	// then put item into an array && split specified item into characters
+
+	const listItems = givenArray.map((i, k) => <li key={k}>{i}</li>);
 
 	const checkGuess = (value: string) => {
 		// this splits the search value into an array with
@@ -50,7 +50,6 @@ const RandomWordGen = () => {
 	const OnSearch = (value: string) => {
 		console.log("you have this many guesses left:", guessesLeft);
 
-		checkGuess(value);
 		const userInput = Array.from(value);
 		
 		const listUserInput = userInput.map((i, k) => <li key={k}>{i}</li>); // TODO!
@@ -58,28 +57,29 @@ const RandomWordGen = () => {
 		setGuessesLeft(guessesLeft - 1)
 	};
 
+	if (guessesLeft === 0) {
+		return <EndingPage />
+	} else {
+		return (
+			<>
+				<div style={{color: 'white'}}>
+					{listItems}
+				</div>
 
-	// then put item into an array && split specified item into characters
+				<Search 
+					placeholder="hi"
+					enterButton="Search"
+					size="large"
+					onSearch={OnSearch}
+					style={{ width: '30%'}}
+				/>
 
-	const listItems = givenArray.map((i, k) => <li key={k}>{i}</li>);
+			</>
 
-	return (
-		<>
-			<div style={{color: 'white'}}>
-				{listItems}
-			</div>
-			<Search 
-				placeholder="hi"
-				allowClear
-				enterButton="Search"
-				size="large"
-				onSearch={OnSearch}
-				style={{ width: '30%'}}
-			/>
+		)
+	}
+	
 
-		</>
-
-	)
 }
 
 export default RandomWordGen;

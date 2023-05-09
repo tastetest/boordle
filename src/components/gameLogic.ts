@@ -48,3 +48,4 @@ function initializeGameState(): GameState {
 		attemptsLeft,
 	};
 }
+
