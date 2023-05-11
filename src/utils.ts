@@ -13,4 +13,9 @@ export default function checkIfGuessIsExactMatch(x: string[], y: string[]) {
   } else {
     return false;
   }
+  // this code is kind of pointless ngl 
 }
+
+// this stringifies both arrays and then compares the values between strings
+export const equals = (a: any, b: any) => JSON.stringify(a) === JSON.stringify(b);
+
