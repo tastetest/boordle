@@ -5,3 +5,12 @@ export const magic = () => {
 
 }
 
+export default function checkIfGuessIsExactMatch(x: string[], y: string[]) {
+  
+  //x.every((i) => y.includes(i));
+  if (x.every(elem => y.includes(elem))) {
+    return true;
+  } else {
+    return false;
+  }
+}

@@ -18,3 +18,5 @@ and to prevent bikeshedding. Then after Boordle is completed, then I can focus o
 - Instead of complicating things, i just used indexOf to indicate if a letter is in the array or not (that matches the given word, at least), and then further more detect if the indexes of both arrays match, if so, return green. If not, return gray. Pretty simple and neat
 
 - So currently, when i run the program the state will keep updating with no limit. Also, there is a bug where you get a new word to match every time you hit search. Today I want to specifically work on making sure that when the state is equal to 0, then your search will be disabled.
+
+- I implemented a small function that is supposed to compare every element of an array and see if it's an exact match with another array. However, it returns undefined for whatever reason. Today is the day we try to fix this issue.

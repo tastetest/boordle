@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import words from './words';
 import EndingPage from './EndingPage';
 import { Input, Space } from 'antd';
+import checkIfGuessIsExactMatch from '../utils';
 
 const RandomWordGen = () => {
 	const [guessesLeft, setGuessesLeft] = useState(5);
@@ -43,8 +44,17 @@ const RandomWordGen = () => {
 				}
 
 			}
-				
+
+
 		}
+
+		// this stringifies both arrays and then compares the values between strings
+		const equals = (a: any, b: any) => JSON.stringify(a) === JSON.stringify(b);
+
+		if (equals(givenArray, userInput)) {
+			alert("HOoooooray you got it right lol");
+			setGuessesLeft(0);	
+		}	
 	}
 
 	const OnSearch = (value: string) => {
