@@ -7,7 +7,7 @@ const EndingPage = () => {
 	return (
 		<>
 			<div style={{color: 'white'}}>
-				<h1>Something here</h1>
+				<h1>You lost. Try again another time. </h1>
 				Game ended! haha
 			</div>
 		</>	

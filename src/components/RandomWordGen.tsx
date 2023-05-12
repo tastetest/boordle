@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import words from './words';
 import EndingPage from './EndingPage';
+import { GameWonPage } from './GameWonPage';
 import { Input, Space } from 'antd';
 import { equals } from '../utils';
 
@@ -49,11 +50,16 @@ const RandomWordGen = () => {
 		}
 
 
+		if (userInput.length !== 5) {
+			alert("That's not a five letter word.")
+		}
+
 		if (equals(givenArray, userInput)) {
-			alert("HOoooooray you got it right lol");
-			setGuessesLeft(0);	
-			setHasWon(true);
-		}	
+			return setHasWon(true);
+		} else {
+			return setHasWon(false);	
+		}
+
 	}
 
 	const OnSearch = (value: string) => {
@@ -67,7 +73,10 @@ const RandomWordGen = () => {
 		setGuessesLeft(guessesLeft - 1)
 	};
 
-	if (guessesLeft === 0) {
+	if (hasWon === true) {
+		return <GameWonPage />
+	} 
+	else if (guessesLeft === 0) {
 		return <EndingPage />
 	} else {
 		return (
