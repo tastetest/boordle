@@ -8,7 +8,7 @@ import { equals } from '../utils';
 
 const RandomWordGen = () => {
 	const [guessesLeft, setGuessesLeft] = useState(5);
-	const [hasWon, setHasWon] = React.useState<boolean>(false);
+	const [hasWon, setHasWon] = useState(false);
 
 	const { Search } = Input;
 	let item = words[Math.floor(Math.random() * words.length)];
@@ -74,7 +74,8 @@ const RandomWordGen = () => {
 	};
 
 	if (hasWon === true) {
-		return <GameWonPage />
+		return <GameWonPage 
+		gameState={hasWon} theGuessesLeft={guessesLeft}/>
 	} 
 	else if (guessesLeft === 0) {
 		return <EndingPage />
