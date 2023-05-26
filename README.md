@@ -20,3 +20,5 @@ and to prevent bikeshedding. Then after Boordle is completed, then I can focus o
 - So currently, when i run the program the state will keep updating with no limit. Also, there is a bug where you get a new word to match every time you hit search. Today I want to specifically work on making sure that when the state is equal to 0, then your search will be disabled.
 
 - I implemented a small function that is supposed to compare every element of an array and see if it's an exact match with another array. However, it returns undefined for whatever reason. Today is the day we try to fix this issue. This issue has been fixed. I replaced the function with a function that will convert the arrays to strings and then compare between the two to see if you get an exact match. If so, then it returns the state hasWon(true)
+
+- I'm going to fix the state bug that i'm having where the given word refreshes every time you make a guess. So instead of fetching the word within the RandomWordGen component, i'm going to have it passed down as a readonly prop

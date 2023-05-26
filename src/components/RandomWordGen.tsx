@@ -6,17 +6,11 @@ import { GameWonPage } from './GameWonPage';
 import { Input, Space } from 'antd';
 import { equals } from '../utils';
 
-const RandomWordGen = () => {
+const RandomWordGen = ({givenArray}:{givenArray: string[]}) => {
 	const [guessesLeft, setGuessesLeft] = useState(5);
 	const [hasWon, setHasWon] = useState(false);
 
 	const { Search } = Input;
-	let item = words[Math.floor(Math.random() * words.length)];
-	// this is to compare the string fetched from the array with 
-	// the input from the user.
-	const givenArray = Array.from(item);
-
-	// then put item into an array && split specified item into characters
 
 	const listItems = givenArray.map((i, k) => <li key={k}>{i}</li>);
 
