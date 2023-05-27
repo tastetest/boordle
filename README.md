@@ -8,7 +8,8 @@ This is an app I'm making that aims to be a bootleg of wordle, as a challenge fo
 3. [x] make unordered lists to contain each letter, add validation for each element within that list 
 4. [x] indicate what letters are correct and wrong, or misplaced
 5. [x] implemented guess counter as well as hasWon state
-6. [ ] 
+6. [x] fixed state bugs with given word being refreshed constantly
+7. [ ] work on adding boxes that will fill when you make an answer
 
 ### random Thoughts:
 i'm going to have to use my own in house library for word generation, I think. Created a library called wordModule.
@@ -21,4 +22,3 @@ and to prevent bikeshedding. Then after Boordle is completed, then I can focus o
 
 - I implemented a small function that is supposed to compare every element of an array and see if it's an exact match with another array. However, it returns undefined for whatever reason. Today is the day we try to fix this issue. This issue has been fixed. I replaced the function with a function that will convert the arrays to strings and then compare between the two to see if you get an exact match. If so, then it returns the state hasWon(true)
 
-- I'm going to fix the state bug that i'm having where the given word refreshes every time you make a guess. So instead of fetching the word within the RandomWordGen component, i'm going to have it passed down as a readonly prop

@@ -6,7 +6,7 @@ import { GameWonPage } from './GameWonPage';
 import { Input, Space } from 'antd';
 import { equals } from '../utils';
 
-const RandomWordGen = ({givenArray}:{givenArray: string[]}) => {
+const RandomWordGen = ({ givenArray }:{givenArray: string[]}) => {
 	const [guessesLeft, setGuessesLeft] = useState(5);
 	const [hasWon, setHasWon] = useState(false);
 
@@ -56,7 +56,21 @@ const RandomWordGen = ({givenArray}:{givenArray: string[]}) => {
 
 	}
 
+	const renderRows = () => {
+		const rows = [];
+		for (let i = 0; i < guessesLeft; i++) {
+			rows.push(
+				<div>
+					<p>howdy!</p>
+				</div>
+			)
+		}
+		return rows;
+	}
+
 	const OnSearch = (value: string) => {
+
+		renderRows();
 		console.log("you have this many guesses left:", guessesLeft);
 
 		const userInput = Array.from(value);
@@ -78,6 +92,9 @@ const RandomWordGen = ({givenArray}:{givenArray: string[]}) => {
 			<>
 				<div style={{color: 'white'}}>
 					{listItems}
+				</div>
+				<div>
+					{renderRows()}	
 				</div>
 
 				<Search 
