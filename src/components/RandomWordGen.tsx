@@ -3,12 +3,16 @@ import { useEffect, useState } from 'react';
 import words from './words';
 import EndingPage from './EndingPage';
 import { GameWonPage } from './GameWonPage';
+import { Grid } from './Grid';
 import { Input, Space } from 'antd';
 import { equals } from '../utils';
 
 const RandomWordGen = ({ givenArray }:{givenArray: string[]}) => {
 	const [guessesLeft, setGuessesLeft] = useState(5);
+	const [currentGuess, setCurrentGuess] = useState(); // TODO!! do something with this.
 	const [hasWon, setHasWon] = useState(false);
+	const [textInput, setTextInput] = useState('');
+	const [updatedText, setUpdatedText ] = useState(textInput);
 
 	const { Search } = Input;
 
@@ -56,29 +60,17 @@ const RandomWordGen = ({ givenArray }:{givenArray: string[]}) => {
 
 	}
 
-	const renderRows = () => {
-		const rows = [];
-		for (let i = 0; i < guessesLeft; i++) {
-			rows.push(
-				<div>
-					<p>howdy!</p>
-				</div>
-			)
-		}
-		return rows;
-	}
-
 	const OnSearch = (value: string) => {
 
-		renderRows();
 		console.log("you have this many guesses left:", guessesLeft);
 
 		const userInput = Array.from(value);
 		
 		const listUserInput = userInput.map((i, k) => <li key={k}>{i}</li>); // TODO!
-
 		checkGuess(value);
+		setTextInput(value);
 		setGuessesLeft(guessesLeft - 1)
+
 	};
 
 	if (hasWon === true) {
@@ -93,10 +85,6 @@ const RandomWordGen = ({ givenArray }:{givenArray: string[]}) => {
 				<div style={{color: 'white'}}>
 					{listItems}
 				</div>
-				<div>
-					{renderRows()}	
-				</div>
-
 				<Search 
 					placeholder="hi"
 					enterButton="Search"
@@ -104,6 +92,11 @@ const RandomWordGen = ({ givenArray }:{givenArray: string[]}) => {
 					onSearch={OnSearch}
 					style={{ width: '30%'}}
 				/>
+				<div style={{color: 'white'}}>
+					{textInput}
+				</div>
+				<Grid guessesLeft={guessesLeft} />
+
 
 			</>
 
