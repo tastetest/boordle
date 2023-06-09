@@ -8,7 +8,7 @@ This is an app I'm making that aims to be a bootleg of wordle, as a challenge fo
 3. [x] make unordered lists to contain each letter, add validation for each element within that list 
 4. [x] indicate what letters are correct and wrong, or misplaced
 5. [x] implemented guess counter as well as hasWon state
-6. [ ] 
+6. [ ] render out damn boxes already
 
 ### random Thoughts:
 i'm going to have to use my own in house library for word generation, I think. Created a library called wordModule.
