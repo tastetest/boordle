@@ -9,10 +9,9 @@ import { equals } from '../utils';
 
 const RandomWordGen = ({ givenArray }:{givenArray: string[]}) => {
 	const [guessesLeft, setGuessesLeft] = useState(5);
-	const [currentGuess, setCurrentGuess] = useState(); // TODO!! do something with this.
+	const [currentGuess, setCurrentGuess]= useState([""]);
 	const [hasWon, setHasWon] = useState(false);
 	const [textInput, setTextInput] = useState('');
-	const [updatedText, setUpdatedText ] = useState(textInput);
 
 	const { Search } = Input;
 
@@ -68,6 +67,7 @@ const RandomWordGen = ({ givenArray }:{givenArray: string[]}) => {
 		
 		const listUserInput = userInput.map((i, k) => <li key={k}>{i}</li>); // TODO!
 		checkGuess(value);
+		setCurrentGuess(userInput)
 		setTextInput(value);
 		setGuessesLeft(guessesLeft - 1)
 
@@ -95,9 +95,7 @@ const RandomWordGen = ({ givenArray }:{givenArray: string[]}) => {
 				<div style={{color: 'white'}}>
 					{textInput}
 				</div>
-				<Grid guessesLeft={guessesLeft} />
-
-
+				<Grid currentGuess={currentGuess} />
 			</>
 
 		)
