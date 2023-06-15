@@ -7,7 +7,7 @@ import { Grid } from './Grid';
 import { Input, Space } from 'antd';
 import { equals } from '../utils';
 
-const RandomWordGen = ({ givenArray }:{givenArray: string[]}) => {
+export const RandomWordGen = ({ givenArray }:{givenArray: string[]}) => {
 	const [guessesLeft, setGuessesLeft] = useState(5);
 	const [currentGuess, setCurrentGuess]= useState([""]);
 	const [hasWon, setHasWon] = useState(false);
@@ -103,4 +103,3 @@ const RandomWordGen = ({ givenArray }:{givenArray: string[]}) => {
 
 }
 
-export default RandomWordGen;
