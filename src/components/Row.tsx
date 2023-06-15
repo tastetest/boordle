@@ -1,13 +1,14 @@
 import React from 'react';
+import { Cell } from './Cell';
 
 export const Row = () => {
 	return (
 		<div className="row">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
+			<Cell />	
+			<Cell />	
+			<Cell />	
+			<Cell />	
+			<Cell />	
 		</div>
 	)
 }

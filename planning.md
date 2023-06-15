@@ -9,3 +9,10 @@ Currently, i have a system where it will detract the attempts left you have(gues
 3. Then, your array is compared to the word array from the words.ts file. The word will also be split up so it can easily compare each element against your split array of elements. Then it runs through some checks for validation.
 4. After that, we want to convert the array into an object so that it can be mapped into a render-able component
 5. So the question is, how do I want the data converted, so that it can be stored as a map?
+
+## Now I have the user input being rendered to the screen
+
+But, there's an issue: It overwrites what has been rendered already. I want it to instead fill within each div after each other. How do I go about that? 
+
+An idea I have is to create a for loop for EACH Row in the Grid component to check for if it is "filled". But i have no idea how i could detect that. 
+Another idea I have is to loop over those elements and check if I've already "interacted" with that element before. Again i don't know how i would do that. I should look at other examples and see how they did it.
